@@ -95,13 +95,13 @@
     $.fn.transformPage = function(settings, pos, index) {
       if (typeof settings.beforeMove == 'function') settings.beforeMove(index);
       $(this).css({
-        "-webkit-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+        "-webkit-transform": "translateY(" + pos + "%) translateZ(0)",
         "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-moz-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+        "-moz-transform": "translateY(" + pos + "%) translateZ(0)",
         "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "-ms-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+        "-ms-transform": "translateY(" + pos + "%) translateZ(0)",
         "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
-        "transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+        "transform": "translateY(" + pos + "%) translateZ(0)",
         "transition": "all " + settings.animationTime + "ms " + settings.easing
       });
       $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
